@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oi mor Eu te amo Muitooooo❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f2f9; /* Fundo suave e neutro */
+            color: #555;
+        }
+
+        header {
+            background-color: #a7c7e7; /* Azul claro suave */
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 5px solid #d4e4f2;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 40px 0 20px;
+            color: #9a8abf; /* Lilás suave */
+        }
+
+        .moments, .messages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .moment, .message {
+            background-color: white;
+            border: 2px solid #a7c7e7;
+            border-radius: 10px;
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .moment img, .message img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .moment:hover, .message:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .moment p, .message p {
+            font-size: 1.1rem;
+            color: #777;
+        }
+
+        .tulip-left, .tulip-right {
+            font-size: 2rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .tulip-left {
+            left: -30px;
+        }
+
+        .tulip-right {
+            right: -30px;
+        }
+
+        .special-text {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: #a7c7e7; /* Azul suave */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fce6f1; /* Fundo rosinha e suave */
+        }
+
+        .login-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #a7c7e7;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .login-box input:focus {
+            border-color: #a7c7e7;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffb6c1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-box button:hover {
+            background-color: #f79fc8;
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-box button:active {
+            transform: scale(0.98);
+        }
+
+        /* Estilo da imagem em tela cheia */
+        .fullscreen-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fullscreen-img img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .moments, .messages {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .moment, .message {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Formulário de login -->
+    <div id="login" class="login-container">
+        <div class="login-box">
+            <h2>Login 🌸</h2>
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button onclick="login()">Entrar 💖</button>
+        </div>
+    </div>
+
+    <!-- Página de conteúdo -->
+    <div id="content" style="display: none;">
+        <header>
+            <h1>Oi mor Me Desculpa por tudo? </h1>
+            <p>Juntei umas coisinha nossa...</p>
+        </header>
+
+        <section>
+            <h2 class="section-title">Momentos...</h2>
+            <div class="moments">
+                <div class="moment">
+                    <span class="tulip-left">🌷</span>
+                    <img src="Foto2.png" alt= onclick="openFullscreen(this)">
+                    <p>Nunca irei esquecer quando vc me chamou de seu garoto pela primeira vez... eu me senti importante,Eu te amo Minhaaa tudo</p>
+                    <span class="tulip-right">🌷</span>
+                </div>
+                <div class="moment">
+                    <span class="tulip-left">🌷</span>
+                    <img src="Foto3.png" alt= onclick="openFullscreen(this)">
+                    <p>Dia 21 de Agosto... O dia onde eu fiz a melhor coisa da minha vida... decidi começar uma vida ao seu lado...</p>
+                    <span class="tulip-right">🌷</span>
+                </div>
+                <div class="moment">
+                    <span class="tulip-left">🌷</span>
+                    <img src="Foto5.jpg" alt= onclick="openFullscreen(this)">
+                    <p>Esse sorriso... que vc nao saiba mor mas ja me salvou de tantas crises... tantos momentos que pensava que tava destruido...</p>
+                    <span class="tulip-right">🌷</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title"></h2>
+            <div class="messages">
+                <div class="message">
+                    <span class="tulip-left">🌷</span>
+                    
+                    <p>Oi mor sei que nao estamos em um momento muito legal...</p>
+                    <span class="tulip-right">🌷</span>
+                </div>
+                <div class="message">
+                    <span class="tulip-left">🌷</span>
+                    
+                    <p>Sei que nao estamos 100%...</p>
+                    <span class="tulip-right">🌷</span>
+                </div>
+                <div class="message">
+                    <span class="tulip-left">🌷</span>
+                    
+                    <p>Tou a um tempinho fazendo isso daki... Pra tentar animarmos um pokin mais </p>
+                    <span class="tulip-right">🌷</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="special-text">
+                <h2>Obrigado por Tudooo Minhaaa Garotaaa </h2>
+                <p>Hj dia 17/12/2024 Tou aqui utilizando esse tempinho que tenho pra escrever essas coisinhas aki pra vc mor... Oi mor eu sei que nao estamos passando por uma fase muito legal mas saiba que tou fazendo de tudo pra tudo isso melhorar tou dando meu melhor... tou orando todos os dias para que meu futuro seja do seu lado, sei que deve tar chateada ainda... que esta mal com isso tudo mas tudo isso ira melhorar mor, tudo isso vai passar nos ja passamos por muitas coisas... E sei que vamos superar tudo isso e cada vez estamos apredendo mais e mais como resolver as coisas, (num sei se deu pra enteder mas o menos o eu quis dizer) Continuando mor eu queria te falar o quao vc e importante para mim... Mesmo quando estamos brigados chateados ou tristes um com outro eu tou sempre tentando fazer algo pra te ver mas animada mas feliz... vc e muito importante na minha vida, vc e quem eu quero no meu futuro e vc com quem eu quero conquistar meus sonhos, quero vc ao meu lado quero estar presente no seu sonho mor... quero estar do seu lado sempre te apoiando sempre junto com vc quando precisar de ajuda pra se levantar eu irei estar ao seu lado... eu agradeço a vc mor por vc ser tao perfeita... cuidar tao bem de mim, ser tao incrivel.
+                    meu mundo nao tinha cores antes de vc chegar mor... quando vc chegou eu estava na minha pior fase... derrubado sem forças pra nada e simplesmente vc chegou e mudou tudo vc veio e mudou minha vida pra melhor e nao sei como agradecer a isso... vc e o motivo de eu sempre querer acordar querendo melhorar meus estudos melhorar minha saude melhorar como homem melhorar minha maturidade, vc e quem me motiva sem saber mor... um bom dia seu e capaz de me curar de muitas coisas, nao me imagino acordar sem um bom dia seu mor... sem acordar e mandar msg...
+                Por ultimo mor queria pedir Desculpas por ser dificl de lidar, pedir desculpas por ter causado tantas brigas onde nao precisava... e quero agradecer por vc sempre estar me ajudando e estando cmg
+            
+            EU TE AMO MINHA PRINCESA💖💖💖💖💖💖💖💖💖 </p>
+            </div>
+        </section>
+
+    
+
+    <!-- Imagem em tela cheia -->
+    <div id="fullscreen" class="fullscreen-img" onclick="closeFullscreen()">
+        <img id="fullscreen-img" src="" alt="">
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "Duda" && password === "210822") {
+                document.getElementById("login").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            } else {
+                alert("Usuário ou senha incorretos!");
+            }
+        }
+
+        function openFullscreen(image) {
+            var fullscreen = document.getElementById("fullscreen");
+            var fullscreenImg = document.getElementById("fullscreen-img");
+            fullscreenImg.src = image.src;
+            fullscreen.style.display = "flex";
+        }
+
+        function closeFullscreen() {
+            var fullscreen = document.getElementById("fullscreen");
+            fullscreen.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
